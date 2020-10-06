@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ProductDB {
+public class ProductDb {
 
     private List<Product> productList;
 
-    public ProductDB() {
+    public ProductDb() {
         this.productList = new ArrayList<>(List.of(new Product("gemüse","Gemüse"),new Product("tomate","Tomate")));
     }
 

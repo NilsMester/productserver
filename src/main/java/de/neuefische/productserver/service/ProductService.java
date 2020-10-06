@@ -1,6 +1,6 @@
 package de.neuefische.productserver.service;
 
-import de.neuefische.productserver.db.ProductDB;
+import de.neuefische.productserver.db.ProductDb;
 import de.neuefische.productserver.model.Product;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,9 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    private ProductDB productDB;
+    private ProductDb productDB;
 
-    public ProductService(ProductDB productDB) {
+    public ProductService(ProductDb productDB) {
         this.productDB = productDB;
     }
 
