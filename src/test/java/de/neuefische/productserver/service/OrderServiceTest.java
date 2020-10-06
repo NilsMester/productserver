@@ -9,7 +9,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -49,6 +52,19 @@ class OrderServiceTest
         assertThat(actual, is(order1));
 
     }
+
+    @Test
+    @DisplayName("Placing wrong order should return null")
+    void testPlaceOrderWithstuff(){
+        //given
+        List products = List.of(new Product("käse","Käse"));
+        when(productDb.containsAll(products)).thenReturn(false);
+        //when
+        Order actual = orderService.placeOrder(products);
+        //then
+        assertEquals(null, actual);
+    }
+
 
 
 }
